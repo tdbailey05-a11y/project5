@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Cool Cars</title>
+</head>
+
+<body>
+    <header>
+        <h1>Cool Cars!</h1>
+        <img class="logo" src="img/rx7.png" alt="rx7">
+    </header>
+    <div>
+        <aside class="sidebar">
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-pill">Home</a></li>
+                    <li><a href="#gallery" class="nav-pill">Gallery</a></li>
+                    <li><a href="#media" class="nav-pill">Media</a></li>
+                    <li><a href="#contact" class="nav-pill">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <section id="home">
+                <h2>Home</h2>
+                <p>Welcome to my website about cars! I will show you some cars that I think are really cool!</p>
+                <p>Here are some CSS stratagies I used to style this page:  </p>
+    
+             <div class="card-container">
+                    <div class="css-card">
+                        <h3>Flexbox Layout</h3>
+                        <p>Used <code>display: flex</code> to create the side-by-side sidebar and main content layout seamlessly.</p>
+                    </div>
+                    <div class="css-card">
+                        <h3>CSS Transitions</h3>
+                        <p>Applied <code>transition</code> to the nav-pills to create a smooth color shift and lift effect on hover.</p>
+                    </div>
+                    <div class="css-card">
+                        <h3>Variables</h3>
+                        <p>Implemented <code>:root</code> variables to maintain color consistency across the entire stylesheet.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gallery">
+                <h2>Gallery</h2>
+                <div class="gallery-grid">
+                    <figure>
+                        <img src="img/quattro.png" alt="80s rally car" class="gallery-img">
+                        <figcaption>Audi Quattro, a class B rally car</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/fordgt.png" alt="Ford super car" class="gallery-img">
+                        <figcaption>Ford's commercial super car the Ford GT, based on there older racecar the GT40</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/silvia.png" alt="Nissan Silvia" class="gallery-img">
+                        <figcaption>Nissan Silvia, popular in japanese drift culture.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section id="media">
+                <h2>Featured Media</h2>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5gJxWIybplc" 
+                            title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <p><strong>Email: </strong> info@coolcars.com</p>
+                    <p><strong>Phone: </strong> 1-800-cool-car </p>
+                    <p><strong>Showroom: </strong> 123 Road Lane, Cityville, Country</p>
+                </div>
+            </section>
+        </main>
+
+    </div>
+</body>
+</html>
