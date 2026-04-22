@@ -1,0 +1,337 @@
+/*  changes made:
+    - hover effects for images and video
+    - Menu buttons are always on screen
+    - Removed strict widths for simple overrides
+    - changed font size of pills from 1vw to 12 pt to be readable on small screens
+    - made compatible for mobile screens
+*/
+
+:root {
+    --main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --bg-color-main: rgb(246, 234, 224);
+    --secondary-color: rgb(13, 9, 45);
+    --main-font-color: rgb(219, 193, 64);
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: var(--main-font);
+    border: 3px solid black;
+    background-color: var(--bg-color-main);
+    width: 100vw;
+}
+header {
+    background-color: var(--secondary-color);
+    border-bottom: 5px solid var(--main-font-color);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    color: var(--main-font-color);
+}
+h1 {
+    padding: 10px;
+    font-size: 60px;
+}
+.logo {
+    padding-bottom: 40px;
+    width: 200px;
+    height: auto;
+}
+
+/* ── Sidebar layout wrapper ── */
+aside.sidebar {
+    background-color: var(--bg-color-main);
+    display: flex;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    align-self: flex-start;
+}
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    
+    background-image: linear-gradient(var(--secondary-color), var(--bg-color-main));
+    padding-top: 10px;
+}
+.nav-pill {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-size: 12pt;
+    text-align: center;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 0px;
+    border: 2px solid rgb(137, 137, 137);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+
+}
+.nav-pill:hover {
+    background-color: rgb(172, 204, 255);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+div {
+    display: flex;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border: 3px solid black;
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--bg-color-main);
+}
+section {
+    background-color: var(--bg-color-main);
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 3px solid black;
+    padding-bottom: 30px;
+}
+
+/* Card Styling */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.css-card {
+    background: white;
+    border: 2px solid black;
+    padding: 15px;
+    width: 80%;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.css-card:hover {
+    transform: scale(1.02);
+}
+
+/* Gallery Styling */
+.gallery-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.gallery-img{
+    width: 100%;
+    border: 3px solid black;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+.gallery-img:hover {
+    transform: scale(1.02);
+}
+
+figure {
+    margin: 10px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    width: 50%;
+    overflow-wrap: break-word;
+}
+
+figcaption {
+    margin-top: 8px;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Video Styling */
+.video-container {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+iframe {
+    width: 80%;
+    max-width: 960px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 3px solid black;
+    box-shadow: 8px 8px 0px var(--navy-dark);
+    transition: transform 0.3s ease; 
+}
+iframe:hover{
+    transform: scale(1.02);
+}
+
+/* Form Styling */
+#myform {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border: 2px solid black;
+    text-align: left;
+}
+
+#myform ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#myform li {
+    display: flex;
+    flex-direction: column;
+}
+
+#myform label {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+#myform input[type="text"],
+#myform textarea {
+    padding: 8px;
+    border: 1px solid #999;
+    font-family: var(--main-font);
+    font-size: 1rem;
+    width: 100%;
+}
+
+#myform li:has(input[type="checkbox"]) {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+#myform input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--secondary-color);
+    background: white;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+#myform input[type="checkbox"]:hover {
+    border-color: var(--main-font-color);
+}
+
+#myform input[type="checkbox"]:checked {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+#myform input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 0px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--main-font-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+#myform input[type="checkbox"] + label {
+    font-weight: 400;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+#myform button[type="submit"] {
+    padding: 10px 20px;
+    background: var(--secondary-color);
+    color: var(--main-font-color);
+    border: 2px solid black;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+#myform button[type="submit"]:hover {
+    background: var(--main-font-color);
+    color: var(--secondary-color);
+}
+
+.errorMsg {
+    color: #c0392b;
+    font-size: 0.85rem;
+    min-height: 1rem;
+}
+
+.successMsg {
+    padding: 15px;
+    background: #d4edda;
+    border: 2px solid #28a745;
+    color: #155724;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+input.was-validated:invalid {
+    border-color: #c0392b;
+    background-color: #fdecea;
+}
+
+input.was-validated:valid {
+    border-color: #28a745;
+}
+
+/* Contact Styling */
+.contact-info {
+    padding: 0px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.contact-info > p {
+    padding: 5px;
+}
+
+@media (max-width: 600px) {
+    h1{
+        font-size: 40px;
+    }
+    figure{
+        width: 100%;
+    }
+    iframe {
+        width: 100%;
+    }
+}
